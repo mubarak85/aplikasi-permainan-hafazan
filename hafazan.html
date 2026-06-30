@@ -118,7 +118,7 @@ border-radius:15px;
 
 <label>Surah</label>
 
-<select>
+<select id="surah">
 
 <option>Al-Fatihah</option>
 
@@ -134,7 +134,7 @@ border-radius:15px;
 
 <label>Juzuk</label>
 
-<select>
+<select id="juzuk">
 
 <option>1</option>
 
@@ -150,7 +150,7 @@ border-radius:15px;
 
 <label>Muka Surat</label>
 
-<select>
+<select id="mukaSurat">
 
 <option>1</option>
 
@@ -192,12 +192,59 @@ document.getElementById("nama").innerHTML="👤 "+localStorage.getItem("nama");
 
 document.getElementById("tingkatan").innerHTML="🏫 "+localStorage.getItem("tingkatan");
 
+const API_URL = "https://script.google.com/macros/s/AKfycbwlGHInYabEk5EQpBEkKhwTyFS7cXq3CUZAPy97UamwSrG-OGnphq4jRFgvkRYD_7oS-w/exec";
+
 function mula(){
 
-alert("🎉 Tahniah!\n\n+100 XP\n+20 Coin\n\n(Habis langkah ini kita akan sambungkan ke Google Sheets.)");
+    const data = {
+
+        nama: localStorage.getItem("nama"),
+
+        tingkatan: localStorage.getItem("tingkatan"),
+
+        surah: document.getElementById("surah").value,
+
+        juzuk: document.getElementById("juzuk").value,
+
+        mukaSurat: document.getElementById("mukaSurat").value,
+
+        xp: 100,
+
+        coin: 20
+
+    };
+
+    fetch(API_URL,{
+
+        method:"POST",
+
+        headers:{
+            "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify(data)
+
+    })
+
+    .then(response => response.text())
+
+    .then(result => {
+
+        alert("✅ Hafazan berjaya disimpan!");
+
+        window.location.href="pelajar.html";
+
+    })
+
+    .catch(error => {
+
+        console.log(error);
+
+        alert("❌ Data gagal dihantar.");
+
+    });
 
 }
-
 </script>
 
 </body>
