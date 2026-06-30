@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Hafazan Baru</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#eef5ef;
+}
+
+header{
+background:#15803d;
+color:white;
+padding:20px;
+font-size:30px;
+text-align:center;
+font-weight:bold;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+label{
+display:block;
+margin-top:18px;
+font-weight:bold;
+}
+
+select{
+
+width:100%;
+
+padding:14px;
+
+margin-top:8px;
+
+font-size:16px;
+
+border-radius:10px;
+
+}
+
+button{
+
+width:100%;
+
+padding:18px;
+
+margin-top:30px;
+
+font-size:20px;
+
+background:#16a34a;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#15803d;
+
+}
+
+.reward{
+
+margin-top:30px;
+
+background:#dcfce7;
+
+padding:20px;
+
+border-radius:15px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+📖 Hafazan Baru
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2 id="nama"></h2>
+
+<p id="tingkatan"></p>
+
+<label>Surah</label>
+
+<select>
+
+<option>Al-Fatihah</option>
+
+<option>Al-Baqarah</option>
+
+<option>Ali-Imran</option>
+
+<option>An-Nisa'</option>
+
+<option>Al-Ma'idah</option>
+
+</select>
+
+<label>Juzuk</label>
+
+<select>
+
+<option>1</option>
+
+<option>2</option>
+
+<option>3</option>
+
+<option>4</option>
+
+<option>5</option>
+
+</select>
+
+<label>Muka Surat</label>
+
+<select>
+
+<option>1</option>
+
+<option>2</option>
+
+<option>3</option>
+
+<option>4</option>
+
+<option>5</option>
+
+</select>
+
+<div class="reward">
+
+<h3>🎁 Ganjaran</h3>
+
+<p>⭐ +100 XP</p>
+
+<p>💰 +20 Coin</p>
+
+<p>🏆 +1 Level Progress</p>
+
+</div>
+
+<button onclick="mula()">
+
+▶ MULAKAN HAFAZAN
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("nama").innerHTML="👤 "+localStorage.getItem("nama");
+
+document.getElementById("tingkatan").innerHTML="🏫 "+localStorage.getItem("tingkatan");
+
+function mula(){
+
+alert("🎉 Tahniah!\n\n+100 XP\n+20 Coin\n\n(Habis langkah ini kita akan sambungkan ke Google Sheets.)");
+
+}
+
+</script>
+
+</body>
+
+</html>
